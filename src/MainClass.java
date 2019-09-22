@@ -9,7 +9,7 @@ public class MainClass {
         System.out.println("Please input lists you gonna learn per day：");
         int per_day = sc.nextInt();
         System.out.println("This is confirmation of the input：");
-        System.out.println("gross："+gross+"\n"+"learn day："+per_day);
+        System.out.println("gross："+gross+"\n"+"per day："+per_day);
 
 
 
@@ -28,14 +28,18 @@ public class MainClass {
 
 
         for (int i = 0; i < days_to_learn+29; i++) {
+            System.out.print("Day"+(i+1)+"");
             if (i < days_to_learn) {
-                System.out.print("第"+(i+1)+"天学习的是 "+learn[i]+"-"+(learn[i]+per_day-1)+" ");
+                System.out.print(" 学习 "+learn[i]+" ～ "+(learn[i]+per_day-1)+"    ");
             }
-            System.out.print("第"+(i+1)+"天复习的是 ");
+            System.out.print(" 复习 ");
             for (int j = 0; j < review[i].length; j++) {
                 if(review[i][j]!=0) {
-                    System.out.print(review[i][j]+"-"+(review[i][j]+per_day-1)+" ");
+                    System.out.print(review[i][j]+" ～ "+(review[i][j]+per_day-1)+"     ");
                 }
+            }
+            if(i < days_to_learn) {
+                System.out.print(learn[i] + " ～ " + (learn[i] + per_day - 1) + "     ");
             }
             System.out.println();
             System.out.println();
